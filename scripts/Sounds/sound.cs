@@ -1,11 +1,11 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class sound : MonoBehaviour {
 
 	private static sound instanceRef;
 	public static bool playMusic = true;
-	public static bool playEffects = true;
+	public static bool playEffects = false;
 	public static bool playSounds = true;
 	public static bool stopMusic = false;
 	public static AudioSource aso;
