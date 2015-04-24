@@ -49,7 +49,8 @@ public class putokazHit : MonoBehaviour {
 		}
 		//Debug.Log (" REC    " + reci.sve_reci[0]);
 		file = na_slovo [Random.Range (0, na_slovo.Count)];
-
+		Debug.Log (file);
+		//stvar.mainTexture=Resources.Load ("azbuka_pics/velike/Ајкула_01" ) as Texture2D ;
 		stvar.mainTexture=Resources.Load ("azbuka_pics/velike/" + file) as Texture2D ;
 
 		lbl.text = file.Split ('_')[0];
