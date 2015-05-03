@@ -9,7 +9,8 @@ public class novarec : MonoBehaviour {
 		manager man = GameObject.Find ("Manager").GetComponent<manager> ();
 		man.formirajnovurec ();
 		//GameObject go = GameObject.Find ("Container");
-		btnmesaj.SetActive(true);
-
+		#if ( UNITY_EDITOR_WIN ||  UNITY_EDITOR_OSX)
+			btnmesaj.SetActive(true);
+		#endif
 	}
 }

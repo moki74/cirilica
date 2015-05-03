@@ -52,7 +52,7 @@ public  class reci : MonoBehaviour {
 	void Start () {
 		
 
-	//	spremi_txt_file ();
+		//spremi_txt_file ();
 
 		if (! ucitano)
 						ucitaj ();
@@ -82,7 +82,7 @@ public  class reci : MonoBehaviour {
 
 	public void spremi_txt_file(){
 
-			StreamWriter sw = new StreamWriter ("ukrugu.txt");
+			StreamWriter sw = new StreamWriter ("reci.txt");
 			Object[] go = Resources.LoadAll ("azbuka_pics/u_krugu");
 			
 			foreach (Object f in go) {

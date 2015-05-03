@@ -80,7 +80,7 @@ public class na_slovo_setup : MonoBehaviour {
 		string postojece ="";
 
 		string  file = "";
-		int[] slike = rnr.numNoRepeat (0, 21, 12);
+		int[] slike = rnr.numNoRepeat (0, reci.sve_reci.Count, 12);
 		slike [0] = 0;
 		slike [1] = 0;
 
@@ -102,7 +102,7 @@ public class na_slovo_setup : MonoBehaviour {
 			if (file.StartsWith (slova.trenutno_slovo.ToUpper()) ||  postojece.Contains(file)) //file = reci.sve_reci.Find (x=> !x.StartsWith (slova.trenutno_slovo.ToUpper()) );
 			{
 				do {
-						file = reci.sve_reci[Random.Range (0,21)];
+					file = reci.sve_reci[Random.Range (0,reci.sve_reci.Count)];
 					}
 					while (
 							 file.StartsWith (slova.trenutno_slovo.ToUpper()) ||  postojece.Contains(file)
@@ -111,7 +111,8 @@ public class na_slovo_setup : MonoBehaviour {
 			postojece = postojece+","+file;
 			Debug.Log (postojece);
 			slika.mainTexture = Resources.Load ("azbuka_pics/u_krugu/" + file) as Texture2D;
-			slika.MakePixelPerfect ();
+		//	slika.MakePixelPerfect ();
+			slika.SetDimensions (512,512);
 			slika.transform.localScale = new Vector3 (0.8f, 0.8f, 0.8f);
 		}
 

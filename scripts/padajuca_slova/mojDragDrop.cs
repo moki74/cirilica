@@ -5,7 +5,8 @@ public class mojDragDrop : UIDragDropItem {
 
 	public GameObject prefab;
 	private int all;
-	private int curr=0;
+	//private int curr=0;
+	static int curr = 0;
 	
 	/// <summary>
 	/// Drop a 3D game object onto the surface.
@@ -17,29 +18,34 @@ public class mojDragDrop : UIDragDropItem {
 		Debug.Log ("RELASE:");
 		if (surface != null)
 		{
-			curr =0;
+
 			Debug.Log (surface.name);
 			if (surface.name.Contains (this.gameObject.name) ||surface.name.Contains (this.gameObject.name.Substring (1,1)) )
 			   {
 					Debug.Log ("U REDU");
+					curr++;
+					Debug.Log (curr);
 					Destroy ( this.gameObject.rigidbody);
 					this.gameObject.transform.parent=surface.transform ;
 					this.gameObject.transform.localPosition=Vector3.zero ;
+					this.gameObject.transform.SetSiblingIndex  (1);
+					
 					all = GameObject.FindGameObjectsWithTag("padajuce_slovo").Length;
-					foreach (GameObject go in GameObject.FindGameObjectsWithTag("padajuce_slovo"))
-						{
-					        
-							Transform t = go.transform.GetChild (1);
-
-							if (t.localPosition == Vector3.zero) 
-							{
-								curr++;
-							}
-						}
+//					foreach (GameObject go in GameObject.FindGameObjectsWithTag("padajuce_slovo"))
+//						{
+//					        
+//							Transform t = go.transform.GetChild (1);
+//
+////							if (t.localPosition == Vector3.zero) 
+////							{
+////								
+////							}
+//						}
 						
 						if (curr==all) 
 						{
 								GameObject.Find ("Manager").GetComponent<manager>().win.SetActive (true);
+								curr = 0;
 								Invoke("disabluj",4);
 
 						}

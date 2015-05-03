@@ -10,7 +10,7 @@ public class NewBehaviourScript : MonoBehaviour {
 		//uis.value = 0.2f;
 	}
 	// Use this for initialization
-	void OnClick() {
+	void OnMouseDown() {
 		if (uis.value > 0.2)
 						uis.value = 0f;
 				else

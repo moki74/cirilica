@@ -17,6 +17,7 @@ public class manager : MonoBehaviour {
 	public GameObject win;
 	public GameObject loose;
 	public bool mesaj = false;
+	public bool novo = true;
 	//accelerometer variables
 
 	float accelerometerUpdateInterval ;
@@ -45,7 +46,7 @@ public class manager : MonoBehaviour {
 		//acellerometer
 		shakeDetectionThreshold *= shakeDetectionThreshold;
 		lowPassValue = Input.acceleration;
-		
+		formirajnovurec ();
 	}
 	
 	// Update is called once per frame
@@ -89,14 +90,22 @@ public class manager : MonoBehaviour {
 
 
 	public  void formiraj_rec(){
-
+		if (!novo)
+						return;
+		novo = false;
 		string file;
 		rec = reci.sve_reci [Random.Range (0, reci.sve_reci.Count)];
 		file = rec;
 		rec = rec.Split ('_') [0];
 		slika.mainTexture = Resources.Load ("azbuka_pics/velike/" + file) as Texture2D;
-		slika.MakePixelPerfect ();
-		StartCoroutine (sacekaj (1.5f));
+		//slika.MakePixelPerfect ();
+		slika.SetDimensions (1024,1024);
+		slika.SetDirty ();
+		//
+		slika.transform.localScale = new Vector3 (0.6f, 0.6f, 0.6f);
+
+	
+			StartCoroutine (sacekaj (1f));
 	}
 
 //	public  void formiraj_rec()
@@ -169,6 +178,7 @@ public class manager : MonoBehaviour {
 				}   
 
 		grid.Reposition ();
+		novo = true;
 
 		
 	}
@@ -203,6 +213,7 @@ public class manager : MonoBehaviour {
 				//odabrana_slova[i].AddExplosionForce(force,new Vector3 (Random.Range (-100f,100f),Random.Range (-10f,10f),-1f),10);
 						x=-1*x;
 					//odabrana_slova[i].AddForce(new Vector3 (Random.Range (-2f,4f),-1f,-1f),ForceMode.Impulse );
+
 			}
 		}
 		//dodatna_slova ();
