@@ -28,7 +28,8 @@ public class mojDragDrop : UIDragDropItem {
 					Destroy ( this.gameObject.rigidbody);
 					this.gameObject.transform.parent=surface.transform ;
 					this.gameObject.transform.localPosition=Vector3.zero ;
-					this.gameObject.transform.SetSiblingIndex  (1);
+					//this.gameObject.transform.SetSiblingIndex  (1);
+					this.gameObject.GetComponent<BoxCollider>().size = new Vector3(0f,0f,0f);
 					
 					all = GameObject.FindGameObjectsWithTag("padajuce_slovo").Length;
 //					foreach (GameObject go in GameObject.FindGameObjectsWithTag("padajuce_slovo"))
