@@ -13,4 +13,5 @@ public class novarec : MonoBehaviour {
 			btnmesaj.SetActive(true);
 		#endif
 	}
+
 }
