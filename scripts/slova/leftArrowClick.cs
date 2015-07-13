@@ -27,7 +27,12 @@ public class leftArrowClick : MonoBehaviour {
 				}
 		path.ocisti ();
 		Instantiate(Resources.Load (slova.prethodno ().ToString() + "vsPrefab"));
-		GameObject.Find ("Manager").GetComponent<setup> ().novoVreme ();
+		// proba sa TTFTextom
+//        if (GameObject.Find ("TTFCreator").transform.childCount > 0)
+//            DestroyImmediate( GameObject.Find ("TTFCreator").transform.GetChild(0).gameObject);
+//        GameObject.Find ("TTFCreator").GetComponent<TTFText> ().Text="";
+//        GameObject.Find ("TTFCreator").GetComponent<TTFText> ().Text=slova.trenutno_slovo.ToUpper();
+//		GameObject.Find ("Manager").GetComponent<setup> ().novoVreme ();
 		
 	
 	}

@@ -45,7 +45,8 @@ public class mojDragDrop : UIDragDropItem {
 						
 						if (curr==all) 
 						{
-								GameObject.Find ("Manager").GetComponent<manager>().win.SetActive (true);
+								Debug.Log (manager.timer);
+								showWin.show(manager.timer,1f,6f,12f);
 								curr = 0;
 								Invoke("disabluj",4);
 
@@ -87,11 +88,11 @@ public class mojDragDrop : UIDragDropItem {
 	}
 
     	
-
+	// OVO JE za stari WIN sa smajlijem
 
 	public  void disabluj()
 		{
-			GameObject.Find ("Manager").GetComponent<manager>().win.SetActive (false);
+//			GameObject.Find ("Manager").GetComponent<manager>().win.SetActive (false);
 			manager man = GameObject.Find ("Manager").GetComponent<manager> ();
 			man.formirajnovurec ();
 		}

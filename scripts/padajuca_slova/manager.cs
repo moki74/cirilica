@@ -14,10 +14,9 @@ public class manager : MonoBehaviour {
 	public UILabel protresi;
 	//UISprite slika;
 	UITexture slika;
-	public GameObject win;
-	public GameObject loose;
 	public bool mesaj = false;
 	public bool novo = true;
+	public static float timer = 0;
 	//accelerometer variables
 
 	float accelerometerUpdateInterval ;
@@ -52,6 +51,8 @@ public class manager : MonoBehaviour {
 	// Update is called once per frame
 	void Update () {
 
+		timer += Time.deltaTime;
+
 		acceleration = Input.acceleration;
 		lowPassValue = Vector3.Lerp(lowPassValue, acceleration, lowPassFilterFactor);
 		deltaAcceleration = acceleration - lowPassValue;
@@ -74,8 +75,7 @@ public class manager : MonoBehaviour {
 
 	public  void formirajnovurec()
 	{
-		if (win.activeInHierarchy )
-						win.SetActive (false);
+
 		shake = true;
 		protresi.enabled = true;
 		if (unistiti != null){
@@ -257,6 +257,7 @@ public class manager : MonoBehaviour {
 			lbl.text = slovo;
 			unistiti.Add( slo);
 		}
+		timer = 0;
 		//slo.transform.position=new Vector3(-100,30,0);
 	}
 }

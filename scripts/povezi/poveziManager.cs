@@ -5,6 +5,7 @@ public class poveziManager : MonoBehaviour {
 	public static string[] vSlova = new string[5];
 	public static string[] mSlova = new string[5];
 	public static GameObject[] gslova = new GameObject[10];
+	public static float timer = 0f;
 
 
 
@@ -16,7 +17,10 @@ public class poveziManager : MonoBehaviour {
 	}
 	
 	// Update is called once per frame
-
+	void Update ()
+	{
+		timer += Time.deltaTime;
+	}
 	public static void startNovo(){
 
 		LineRenderer[] lrs = FindObjectsOfType(typeof(LineRenderer)) as LineRenderer[];
@@ -25,6 +29,7 @@ public class poveziManager : MonoBehaviour {
 		}
 		
 		novaSlova ();
+
 	
 //		int index = 0;
 //		for (int i=1; i<10; i=i+2) {
@@ -85,7 +90,7 @@ public class poveziManager : MonoBehaviour {
 			j++;
 			
 		}
-
+		timer = 0f;
 
 	}
 

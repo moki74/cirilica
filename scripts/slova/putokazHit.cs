@@ -99,10 +99,15 @@ public class putokazHit : MonoBehaviour {
 				    Invoke ("sledeciPutokaz",0.5f);
 
 				   if(hit.transform.name.Contains ("kraj") ) {
-				  	 GameObject.Find("Manager").GetComponent<setup>().CancelInvoke ();
-					Debug.Log (slova.trenutno_slovo);
-					stvar.gameObject.SetActive (true); 
-				
+                         float timer = GameObject.Find("Manager").GetComponent<setup>().timer;
+                          Debug.Log(timer);
+    				  	 GameObject.Find("Manager").GetComponent<setup>().CancelInvoke ();
+                       //  GameObject win =null;
+                         stvar.gameObject.SetActive (true); 
+                         showWin.show(timer,2f);
+					//Debug.Log (slova.trenutno_slovo);
+					
+				    
 
 					//zivotinja.enabled = true;
 				//	biljka.enabled = true;

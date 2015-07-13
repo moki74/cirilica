@@ -9,10 +9,10 @@ public class pocni : MonoBehaviour {
 	public Material dobroMat,losMat;
 	bool press = false;
 	bool crtaj = false;
-
+	static int brojDobrih =0;
 	// Use this for initialization
 	void Start () {
-
+		brojDobrih = 0;
 		lr= gameObject.AddComponent<LineRenderer>();
 		lr.material = losMat;
 		
@@ -61,6 +61,15 @@ public class pocni : MonoBehaviour {
 							lr.material=dobroMat;
 							lr.SetPosition (0, transform.Find ("pocetnaTacka").transform.position);
 							lr.SetPosition (1,  UICamera.hoveredObject.transform.Find ("krajnjaTacka").transform.position);
+							brojDobrih ++;
+							Debug.Log(brojDobrih);
+							if (brojDobrih > 4)
+							{
+								Debug.Log(poveziManager.timer);
+								showWin.show(poveziManager.timer,1f,6f,12f);
+								brojDobrih = 0;
+						
+							}
 							
 						}
 						

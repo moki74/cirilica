@@ -10,7 +10,7 @@ public class pomeri : MonoBehaviour {
 		 this.collider.enabled = false;
 		if (transform.GetComponentInChildren<UILabel> ().text.StartsWith (slova.trenutno_slovo.ToUpper ())) {
 						
-						this.gameObject.GetComponentInChildren <UISprite > ().spriteName = "check-mark-3-64";
+						this.gameObject.GetComponentInChildren <UISprite > ().spriteName = "Approval-100";
 						this.gameObject.GetComponentInChildren <UISprite > ().SetDimensions (100, 100);	
 						this.gameObject.GetComponentInChildren <UISprite > ().color=Color.green;	
 						na_slovo_manager.slike.Add (this.gameObject.name);
@@ -18,9 +18,9 @@ public class pomeri : MonoBehaviour {
 						//na_slovo_manager.reci.Add(transform.GetComponentInChildren<UILabel> ().text.ToLower());
 					
 				} else {
-						this.gameObject.GetComponentInChildren <UISprite > ().spriteName = "no";
+						this.gameObject.GetComponentInChildren <UISprite > ().spriteName = "Do Not Disturb-100";
 						this.gameObject.GetComponentInChildren <UISprite > ().SetDimensions (80, 80);
-						this.gameObject.GetComponentInChildren <UISprite > ().color = Color.red ;
+						//this.gameObject.GetComponentInChildren <UISprite > ().color = Color.red ;
 				}
 	}
 

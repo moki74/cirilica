@@ -8,7 +8,7 @@ public class na_slovo_setup : MonoBehaviour {
 	public GUIText log;
 	private float scale = 810f;
 	public bool startTime = false;
-	private float timer =0;
+	public float timer =0;
 	public UITexture slika;
 
 
