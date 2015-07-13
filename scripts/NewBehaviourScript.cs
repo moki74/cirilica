@@ -1,4 +1,4 @@
-﻿using UnityEngine;
+using UnityEngine;
 using System.Collections;
 
 public class NewBehaviourScript : MonoBehaviour {
@@ -18,6 +18,6 @@ public class NewBehaviourScript : MonoBehaviour {
 	
 	}
 	
-	// Update is called once per frame
+	// Update is called once per frame per
 
 }
