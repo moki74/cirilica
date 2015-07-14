@@ -6,7 +6,7 @@ public class playSoundStar : MonoBehaviour {
 	// Use this for initialization
 	void Start () {
         int i=1;
-        sound.playSounds = true;
+        sound.playSounds = false;
         sound.playSound ("coin");
         TweenColor [] tc = gameObject.GetComponentsInChildren<TweenColor>() as TweenColor [];
         for (i =1 ; i < tc.Length ;i++)
