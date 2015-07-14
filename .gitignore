@@ -222,3 +222,5 @@ pip-log.txt
 Resources/azbuka_pics
 *.meta
 *.meta
+Editor/Etcetera/out/en.lproj.meta
+Resources/azbuka_pics/reci.txt.meta
