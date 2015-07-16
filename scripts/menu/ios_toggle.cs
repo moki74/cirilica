@@ -21,24 +21,33 @@ public class ios_toggle : MonoBehaviour {
 						value = 1f;
 						if (this.name == "muzika"){
 								sound.playMusic = true;	
-                                 
-
+                                menuManager.muzika=1;
+                                
 						}
-						else if (this.name == "naracija")
+						else if (this.name == "naracija"){
 								sound.playSounds  = true;
-						else
+                                menuManager.naracija =1;
+                        }
+						else{
 								sound.playEffects = true;
-                         uis.spriteName="High Volume-100";
+                                menuManager.efekti =1;
+                        } 
+                        uis.spriteName="High Volume-100";
 				} else {
 						value = 0f;
 						if (this.name == "muzika"){
 							sound.playMusic = false;
 							sound.stopMusic = true;
+                            menuManager.muzika=0;
 						}
-						else if (this.name == "naracija")
+						else if (this.name == "naracija"){
 							sound.playSounds = false;
-						else
+                             menuManager.naracija =0;
+                        }
+						else{
 							sound.playEffects = false;
+                            menuManager.efekti =0;
+                        }
                          uis.spriteName="Mute-100";
 
 				}
