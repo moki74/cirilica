@@ -9,7 +9,9 @@ public class userManager : MonoBehaviour {
 
 	public UIInput ime,godine;
 	public UIPopupList ruka;
+    public string ruka_s = "desnoruk";
 	private string imagePath;
+    private int tsti = 0;
 //	public GameObject testPlane;
 	public UITexture tex;
 
@@ -127,7 +129,7 @@ public class userManager : MonoBehaviour {
 	//	PlayerPrefs.SetString ("users", "");
 	//	PlayerPrefs.SetString ("users", "");
 	//	PlayerPrefs.Flush ();
-        setujUser (ime.value  ,"",ruka.value, int.Parse (godine.value) );
+        setujUser (ime.value  ,"",ruka_s, int.Parse (godine.value) );
 	//	string [] users = PlayerPrefs.GetString ("users").Split (',');
 	//	foreach (string user in users)
 
@@ -139,6 +141,22 @@ public class userManager : MonoBehaviour {
 	}
 
 
+
+    public void leva_ruka() {
+
+        GameObject.Find ("ruka_highlight").transform.localPosition = new Vector3(-85f,0,0);            
+        ruka_s = "levoruk";      
+        
+    }
+
+    public void desna_ruka() {
+        
+        GameObject.Find ("ruka_highlight").transform.localPosition = new Vector3(85f,0,0);            
+        ruka_s = "desnoruk";      
+        
+    }
+
+
 	public void List() {
 		Application.LoadLevel ("list_user");
 		
@@ -146,7 +164,7 @@ public class userManager : MonoBehaviour {
 
 	public void Slika() {
 		//Debug.Log ("SLIKA");
-		EtceteraBinding.promptForPhoto (0.5f);
+		EtceteraBinding.promptForPhoto (1f,PhotoPromptType.Camera);
 		
 	}
 

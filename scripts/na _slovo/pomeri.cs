@@ -8,7 +8,8 @@ public class pomeri : MonoBehaviour {
 		//if (na_slovo_manager.num_correct <= 2)
 
 		 this.collider.enabled = false;
-		if (transform.GetComponentInChildren<UILabel> ().text.StartsWith (slova.trenutno_slovo.ToUpper ())) {
+		if (transform.GetComponentInChildren<UILabel> ().text.StartsWith (slova.trenutno_slovo.ToUpper ()) && 
+		    transform.GetComponentInChildren<UILabel> ().text.Length > 1) {
 						
 						this.gameObject.GetComponentInChildren <UISprite > ().spriteName = "Approval-100";
 						this.gameObject.GetComponentInChildren <UISprite > ().SetDimensions (100, 100);	

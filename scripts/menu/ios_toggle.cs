@@ -2,37 +2,53 @@
 using System.Collections;
 
 public class ios_toggle : MonoBehaviour {
-	UISlider uis;
+    UISprite  uis;
+    int value =0;
 	// Use this for initialization
 	void Start () {
 
-		uis = transform.GetComponentInParent<UISlider> ();
-		uis.value = (float) PlayerPrefs.GetInt (uis.name);
+		uis = this.GetComponent<UISprite>();
+		value = PlayerPrefs.GetInt (this.name);
+        if (value > 0) uis.spriteName="High Volume-100";
+             else uis.spriteName="Mute-100";
 	
 	}
 	
 	// Update is called once per frame
-	void OnClick () {
-		if (uis.value == 0f) {
-						uis.value = 1f;
-						if (uis.name == "muzika"){
-								sound.playMusic = true;					
-
+	public void OnClick() {
+    //    Debug.Log("KLIIIIK");
+		if (value == 0) {
+						value = 1;
+						if (this.name == "muzika"){
+								sound.playMusic = true;	
+                                menuManager.muzika=1;
+                                
 						}
-						else if (uis.name == "naracija")
+						else if (this.name == "naracija"){
 								sound.playSounds  = true;
-						else
+                                menuManager.naracija =1;
+                        }
+						else{
 								sound.playEffects = true;
+                                menuManager.efekti =1;
+                        } 
+                        uis.spriteName="High Volume-100";
 				} else {
-						uis.value = 0f;
-						if (uis.name == "muzika"){
+						value = 0;
+						if (this.name == "muzika"){
 							sound.playMusic = false;
 							sound.stopMusic = true;
+                            menuManager.muzika=0;
 						}
-						else if (uis.name == "naracija")
+						else if (this.name == "naracija"){
 							sound.playSounds = false;
-						else
+                             menuManager.naracija =0;
+                        }
+						else{
 							sound.playEffects = false;
+                            menuManager.efekti =0;
+                        }
+                         uis.spriteName="Mute-100";
 
 				}
 		menuManager.snimi ();

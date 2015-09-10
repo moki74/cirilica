@@ -4,7 +4,7 @@ using System.Collections;
 public class menuManager : MonoBehaviour {
 
 	public static int muzika = 0;
-	public static int efekti = 1;
+	public static int efekti = 0;
 	public static int naracija = 0;
 
 
@@ -40,16 +40,16 @@ public class menuManager : MonoBehaviour {
 	}
 
 	public static void snimi(){
-	//	PlayerPrefs.SetInt ("muzika",muzika) ;
-	//	PlayerPrefs.SetInt ("efekti",efekti) ;
-	//	PlayerPrefs.SetInt ("naracija",naracija) ;
+		PlayerPrefs.SetInt ("muzika",muzika) ;
+		PlayerPrefs.SetInt ("efekti",efekti) ;
+		PlayerPrefs.SetInt ("naracija",naracija) ;
 
-		UISlider [] slideri = GameObject.FindObjectsOfType<UISlider> ();
-		foreach (UISlider slider in slideri) {
+//        GameObject [] slideri = GameObject.FindGameObjectsWithTag("meni");
+//		foreach (UISlider slider in slideri) {
+//			
+//			PlayerPrefs.SetInt(slider.name,(int)slider.value);
 			
-			PlayerPrefs.SetInt(slider.name,(int)slider.value);
-			
-		}
+//		}
 
 		
 	}
