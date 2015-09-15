@@ -61,6 +61,10 @@ public class PathNodes : MonoBehaviour {
 			iTweenPath ip = (iTweenPath) comps [sledeciPutokaz];
 
 			nodes = ip.nodes;
+            if (nodes.Count== 2) {
+                       
+                                   nodes.Insert (1, nodes[0] + 0.5f*(nodes[1] - nodes[0]));
+                    }
 			for (int i =0; i< nodes.Count; i++) {
 				if (i == nodes.Count - 1) {
 					lastOne = true;
@@ -78,7 +82,8 @@ public class PathNodes : MonoBehaviour {
 						smerb=false;
 					}
 				}
-				if (i==0  ) {
+				
+                 else if (i == 0){
 						//  s = Instantiate (Resources.Load ("putokaz1")) as GameObject ;
 						s = Instantiate(Resources.Load ("putokaz2"))as GameObject;
 						s.transform.localPosition  = new Vector3 (nodes [i].x, nodes [i].y, nodes [i].z);
@@ -93,6 +98,11 @@ public class PathNodes : MonoBehaviour {
 					
 					
 				}
+                else {
+                    s = Instantiate(Resources.Load ("putokaz"))as GameObject;
+                    s.transform.localPosition  = new Vector3 (nodes [i].x, nodes [i].y, nodes [i].z);
+                }
+
 				lastOne=false;
 				// paths = ip.nodes ;
 				//	            foreach (Vector3 node in ip.nodes ){

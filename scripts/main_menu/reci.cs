@@ -12,17 +12,17 @@ public  class reci : MonoBehaviour {
 	public static List<string> zivotinje = new List<string>();
 	public static List<string> stvari = new List<string>();
 	public static List<string> ukrugu = new List<string>();
-	//public static List<string> sve_reci = new List<string>();
-	public static List<string> sve_reci =new List<string>(new string[]
-	                                                      { "Авион_01", "Ананас_01", "Ауто_01","Аутобус_01",
-		"Бик_01", "Бицикл_01", "Бресква_01","Булдожер_01",	
+	public static List<string> sve_reci = new List<string>();
+/*	public static List<string> sve_reci =new List<string>(new string[]
+	                                                      { "Авион_01", "Ананас_01", "Ајкула_01","Аутобус_01",
+		"Бик_01", "Бицикл_01","Булдожер_01",	
 		"Виолина_01", "Воз_01", "Врабац_01","Вук_01",																
-		"Гавран_01", "Гитара_01", "Голуб_01","Горила_01","Грожђе_01",
-		"Делфин_01", "Диња_01", "Добош_01"
+		"Гитара_01", "Голуб_01","Горила_01","Грожђе_01",
+        "Делфин_01", "Диња_01", "Добош_01" ,"Диносаурус_01"
 	
 	
 	
-														});
+														});*/
 
 	bool ucitano = false;
 
@@ -64,8 +64,8 @@ public  class reci : MonoBehaviour {
 
 	//	spremi_txt_file ();
 
-//		if (! ucitano)
-//						ucitaj ();
+		if (! ucitano)
+						ucitaj ();
 
 	
 	}
@@ -79,7 +79,7 @@ public  class reci : MonoBehaviour {
 				//	StreamWriter sw = new StreamWriter ("biljke.txt");
 				//	Object[] go=Resources.LoadAll("azbuka_pics/biljke") ;
 				foreach (string rec in sText.Split ('\n')) {
-			
+                      Debug.Log(rec +"\n");    
 						sve_reci.Add (rec);
 						//		sw.WriteLine (f.name);
 			

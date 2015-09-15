@@ -89,7 +89,7 @@ public class putokazHit : MonoBehaviour {
 			    Destroy(hit.transform.gameObject);
 			}
 
-		     if(hit.transform.name.Contains ("cilj") && GameObject.Find ("putokaz2(Clone)") == null ){
+            if(hit.transform.name.Contains ("cilj") && GameObject.Find ("putokaz2(Clone)") == null && GameObject.Find ("putokaz(Clone)") == null ){
 					GameObject s = Instantiate(Resources.Load ("particle"))as GameObject;
 					s.transform.position  = hit.transform.position;
 					Destroy(hit.transform.gameObject);
@@ -104,7 +104,7 @@ public class putokazHit : MonoBehaviour {
     				  	 GameObject.Find("Manager").GetComponent<setup>().CancelInvoke ();
                        //  GameObject win =null;
                          stvar.gameObject.SetActive (true); 
-                         showWin.show(timer,2f);
+                         showWin.show(timer);
 					//Debug.Log (slova.trenutno_slovo);
 					
 				    

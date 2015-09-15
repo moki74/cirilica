@@ -66,7 +66,7 @@ public class pocni : MonoBehaviour {
 							if (brojDobrih > 4)
 							{
 								Debug.Log(poveziManager.timer);
-								showWin.show(poveziManager.timer,1f,6f,12f);
+								showWin.show(poveziManager.timer,0.5f,0.7f,6f,12f);
 								brojDobrih = 0;
 						
 							}
