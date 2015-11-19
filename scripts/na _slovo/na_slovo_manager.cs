@@ -56,7 +56,7 @@ public class na_slovo_manager : MonoBehaviour {
 		}
 
 		slike.Clear ();
-        showWin.show(gameObject.GetComponent<na_slovo_setup>().timer,2f);
+        showWin.show(gameObject.GetComponent<na_slovo_setup>().timer);
 		sound.playSound (reci [0]);
 		StartCoroutine ("sacekaj_i_pusti", 1f);
 	

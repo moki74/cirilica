@@ -46,7 +46,7 @@ public class mojDragDrop : UIDragDropItem {
 						if (curr==all) 
 						{
 								Debug.Log (manager.timer);
-								showWin.show(manager.timer,1f,6f,12f);
+								showWin.show(manager.timer,0.5f,0.7f,6f,12f);
 								curr = 0;
 								Invoke("disabluj",4);
 

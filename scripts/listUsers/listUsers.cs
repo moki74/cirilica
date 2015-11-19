@@ -68,8 +68,9 @@ public class listUsers : MonoBehaviour {
 								}
 						}
 			table.Reposition ();
-			StartCoroutine (EtceteraManager.textureFromFileAtPath ("file://" + paths[0], textureLoaded, textureLoadFailed));	
-
+            #if UNITY_IPHONE
+		    	StartCoroutine (EtceteraManager.textureFromFileAtPath ("file://" + paths[0], textureLoaded, textureLoadFailed));	
+            #endif
 
 		}
 
@@ -84,6 +85,7 @@ public class listUsers : MonoBehaviour {
 			// Texture loading delegates
 			public void textureLoaded( Texture2D texture )
 			{
+                #if UNITY_IPHONE
 				//testPlane.renderer.material.mainTexture = texture;
 				texs[j].mainTexture = texture;
 				j++;
@@ -91,15 +93,19 @@ public class listUsers : MonoBehaviour {
 						StartCoroutine (EtceteraManager.textureFromFileAtPath ("file://" + paths [j], textureLoaded, textureLoadFailed));
 				else
 						j = 0;
+
+                #endif
 					
  			}
 
 
 			public void textureLoadFailed( string error )
 			{
+                #if UNITY_IPHONE
 				var buttons = new string[] { "OK" };
 				EtceteraBinding.showAlertWithTitleMessageAndButtons( "Error Loading Texture.  Did you choose a photo first?", error, buttons );
 				Debug.Log( "textureLoadFailed: " + error );
+                #endif
 			}
 
 

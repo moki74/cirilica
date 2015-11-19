@@ -59,7 +59,7 @@ public class path : MonoBehaviour {
 				
 				if (rayCastHit.transform.tag =="slovo" || rayCastHit.transform.tag =="slovoPrefab")
 					{
-					Debug.Log (rayCastHit.transform.name);
+				//	Debug.Log (rayCastHit.transform.name);
 					  // Da se ne pokrene demo
 					GameObject go ;
 					if ( go = GameObject.Find ("Prst"))go.SetActive (false);
@@ -145,12 +145,19 @@ public class path : MonoBehaviour {
     	 }
 		
          lineCount = linePoints.Count;
+
+
 		
 		
 	}
-	
+
+
+// Ovo crta losu liniju
+
 	void crtajLose()
 	{
+        return; // sada ne radi nista
+
 		if(ontrack || GameObject.Find ("losPath")==null || preseciLos)
 		{
 			novipathlos ();

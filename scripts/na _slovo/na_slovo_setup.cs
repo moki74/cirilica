@@ -118,7 +118,7 @@ public class na_slovo_setup : MonoBehaviour {
 
 		file = "";
 		string slovo = slova.trenutno_slovo ;
-		Debug.Log (slovo);
+	//	Debug.Log (slovo);
 		int [] position = rnr.numNoRepeat (1, 7, 3);
 		Debug.Log (position.ToString ());
 
@@ -144,7 +144,7 @@ public class na_slovo_setup : MonoBehaviour {
 			if (str.StartsWith (slovo.ToUpper ()) && j < 3) {
 
 				string rec = str.Split ('_')[0];
-				Debug.Log ("VREDNOST J : " + j + "  Pos " + position[j] );
+				Debug.Log ("VREDNOST J : " + j + "  Pos " + position[j] + " Rec:" + rec );
 				slika = GameObject.Find ("slika" + position[j].ToString ()).GetComponent<UITexture>();
 				slika.mainTexture=Resources.Load ("azbuka_pics/u_krugu/" + str) as Texture2D ;
 				j++;

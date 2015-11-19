@@ -73,9 +73,11 @@ public class userManager : MonoBehaviour {
 
 
 
-
+        #if UNITY_IPHONE
 			// Listen to image picker event so we can load the image into a texture later
 			EtceteraManager.imagePickerChoseImageEvent += imagePickerChoseImage;
+        #endif
+
 
 	//	PlayerPrefs.DeleteAll ();
 	//	PlayerPrefs.Flush ();
@@ -94,20 +96,21 @@ public class userManager : MonoBehaviour {
 
 	void OnDisable()
 	{
+        #if UNITY_IPHONE
 		// Stop listening to the image picker event
 		EtceteraManager.imagePickerChoseImageEvent -= imagePickerChoseImage;
+        #endif
 	}
 	
-//	#endif
+//	
 	
 	
 	void imagePickerChoseImage( string imagePath )
 	{
+        #if UNITY_IPHONE
 		this.imagePath = imagePath;
-
-
-		StartCoroutine (EtceteraManager.textureFromFileAtPath ("file://" + imagePath, textureLoaded, textureLoadFailed));
-
+        StartCoroutine (EtceteraManager.textureFromFileAtPath ("file://" + imagePath, textureLoaded, textureLoadFailed));
+        #endif
 	}
 
 	// Texture loading delegates
@@ -120,16 +123,22 @@ public class userManager : MonoBehaviour {
 	
 	public void textureLoadFailed( string error )
 	{
+        #if UNITY_IPHONE
 		var buttons = new string[] { "OK" };
 		EtceteraBinding.showAlertWithTitleMessageAndButtons( "Error Loading Texture.  Did you choose a photo first?", error, buttons );
 		Debug.Log( "textureLoadFailed: " + error );
+        #endif
 	}
 	
 	public void OnClick() {
 	//	PlayerPrefs.SetString ("users", "");
 	//	PlayerPrefs.SetString ("users", "");
 	//	PlayerPrefs.Flush ();
-        setujUser (ime.value  ,"",ruka_s, int.Parse (godine.value) );
+        if (ime.value.Length > 0 && godine.value.Length  > 0) {
+            setujUser (ime.value  ,"",ruka_s, int.Parse (godine.value) );
+            List();
+
+        }
 	//	string [] users = PlayerPrefs.GetString ("users").Split (',');
 	//	foreach (string user in users)
 
@@ -164,7 +173,9 @@ public class userManager : MonoBehaviour {
 
 	public void Slika() {
 		//Debug.Log ("SLIKA");
+        #if UNITY_IPHONE
 		EtceteraBinding.promptForPhoto (1f,PhotoPromptType.Camera);
+        #endif
 		
 	}
 
