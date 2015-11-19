@@ -12,8 +12,13 @@ public  class reci : MonoBehaviour {
 	public static List<string> zivotinje = new List<string>();
 	public static List<string> stvari = new List<string>();
 	public static List<string> ukrugu = new List<string>();
+
 	//public static List<string> sve_reci = new List<string>();
-	public static List<string> sve_reci =new List<string>(new string[]
+//	public static List<string> sve_reci =new List<string>(new string[]);
+
+	public static List<string> sve_reci = new List<string>();
+/*	public static List<string> sve_reci =new List<string>(new string[]
+>>>>>>> origin/master
 	                                                      { "Авион_01", "Ананас_01", "Ајкула_01","Аутобус_01",
 		"Бик_01", "Бицикл_01","Булдожер_01",	
 		"Виолина_01", "Воз_01", "Врабац_01","Вук_01",																
@@ -22,7 +27,7 @@ public  class reci : MonoBehaviour {
 	
 	
 	
-														});
+														});*/
 
 	bool ucitano = false;
 
@@ -64,8 +69,12 @@ public  class reci : MonoBehaviour {
 
 	//	spremi_txt_file ();
 
+
 		//if (! ucitano)
 		//				ucitaj ();
+
+		if (! ucitano)
+						ucitaj ();
 
 	
 	}
