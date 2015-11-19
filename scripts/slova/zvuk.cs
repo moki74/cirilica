@@ -8,6 +8,6 @@ public class zvuk : MonoBehaviour {
 	void OnClick (){
 		Debug.Log (file.text);
 		string filename = file.text;
-		sound.playSound ("onomatopeja/" + filename.ToLower () + "_01",0.5f);
+		sound.playEffect ( filename.ToLower (),0.5f);
 	}
 }

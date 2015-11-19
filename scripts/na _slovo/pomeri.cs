@@ -13,7 +13,7 @@ public class pomeri : MonoBehaviour {
 						
 						this.gameObject.GetComponentInChildren <UISprite > ().spriteName = "Approval-100";
 						this.gameObject.GetComponentInChildren <UISprite > ().SetDimensions (100, 100);	
-						this.gameObject.GetComponentInChildren <UISprite > ().color=Color.green;	
+						//this.gameObject.GetComponentInChildren <UISprite > ().color=Color.green;	
 						na_slovo_manager.slike.Add (this.gameObject.name);
 						na_slovo_manager.num_correct ++;
 						//na_slovo_manager.reci.Add(transform.GetComponentInChildren<UILabel> ().text.ToLower());

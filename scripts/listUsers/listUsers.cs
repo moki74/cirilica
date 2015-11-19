@@ -114,7 +114,7 @@ public class listUsers : MonoBehaviour {
 			{
 
                 #if UNITY_IPHONE
-				//var buttons = new string[] { "OK" };
+				var buttons = new string[] { "OK" };
 				EtceteraBinding.showAlertWithTitleMessageAndButtons( "Error Loading Texture.  Did you choose a photo first?", error, buttons );
 				Debug.Log( "textureLoadFailed: " + error );
                 #endif

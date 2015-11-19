@@ -9,7 +9,8 @@ public class sound : MonoBehaviour {
 	public static bool playSounds = false;
 	public static bool stopMusic = false;
 	public static AudioSource aso;
-
+	public static AudioSource aso1;
+	//public static AudioClip ac;
 
 
 	void Awake()
@@ -28,7 +29,9 @@ public class sound : MonoBehaviour {
 	}
 	// Use this for initialization
 	void Start () {
-		 aso = GetComponent<AudioSource>() as AudioSource ;
+		 aso = GetComponents<AudioSource>()[0] as AudioSource ;
+		 aso1 = GetComponents<AudioSource>()[1] as AudioSource ;
+		 
 	
 	}
 	
@@ -47,15 +50,19 @@ public class sound : MonoBehaviour {
 		if (!aso.isPlaying) 
 			aso.Play ();
 		playMusic = false;
-		
+	
 	}
 
 	public static void playEffect(string fileName,float volume=1f){
 		if (!playEffects)
 						return;
-		AudioClip ac = Resources.Load ("audio/effetcs/" + fileName) as AudioClip;
-		if (ac != null)
-			AudioSource.PlayClipAtPoint (ac,Camera.main.transform.position , volume);
+		AudioClip ac = Resources.Load ("audio/sounds/onomatopeja/" + fileName) as AudioClip;
+		if (ac != null) {
+						//AudioSource.PlayClipAtPoint (ac,Camera.main.transform.position , volume);
+						if(aso1.isPlaying) aso1.Stop ();
+						aso1.clip = ac;
+						aso1.Play ();
+				}
 
 			
 	}
@@ -63,10 +70,17 @@ public class sound : MonoBehaviour {
 	public static void playSound(string fileName,float volume=1f){
 		if (!playSounds)
 			return;
-		AudioClip ac = Resources.Load ("audio/sounds/" + fileName) as AudioClip;
-		if (ac != null)
-			AudioSource.PlayClipAtPoint (ac, Camera.main.transform.position, volume);
-		
+
+		 AudioClip ac = Resources.Load ("audio/sounds/" + fileName) as AudioClip;
+		if (ac != null) {
+			if(aso1.isPlaying) aso1.Stop ();
+			AudioSource.PlayClipAtPoint (ac,Camera.main.transform.position , volume);
+			//if(aso1.isPlaying) aso1.Stop ();
+			//aso1.volume=volume;
+			//aso1.clip = ac;
+			//aso1.Play ();
+		}
 		
 	}
+
 }

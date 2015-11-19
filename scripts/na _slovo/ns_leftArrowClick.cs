@@ -32,6 +32,7 @@ public class ns_leftArrowClick : MonoBehaviour {
 						gos.transform.position = new Vector3 (8f, 0f, 0f);
 		gos.GetComponent<slovoPathovi> ().enabled = false;
 		na_slovo_manager.spremi_slike ();
+		na_slovo_manager.num_correct = 0;
 		GameObject.Find ("Manager").GetComponent<na_slovo_setup>().novoVreme ();
 		
 	

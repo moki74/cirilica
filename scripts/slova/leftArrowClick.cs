@@ -26,13 +26,13 @@ public class leftArrowClick : MonoBehaviour {
 						Debug.Log ("U destroy :" + go.name);
 				}
 		path.ocisti ();
-		Instantiate(Resources.Load (slova.prethodno ().ToString() + "vsPrefab"));
+		GameObject gos = Instantiate (Resources.Load (slova.prethodno().ToString() + "vsPrefab")) as GameObject ;
 		// proba sa TTFTextom
 //        if (GameObject.Find ("TTFCreator").transform.childCount > 0)
 //            DestroyImmediate( GameObject.Find ("TTFCreator").transform.GetChild(0).gameObject);
 //        GameObject.Find ("TTFCreator").GetComponent<TTFText> ().Text="";
 //        GameObject.Find ("TTFCreator").GetComponent<TTFText> ().Text=slova.trenutno_slovo.ToUpper();
-//		GameObject.Find ("Manager").GetComponent<setup> ().novoVreme ();
+		GameObject.Find ("Manager").GetComponent<setup> ().novoVreme ();
 		
 	
 	}

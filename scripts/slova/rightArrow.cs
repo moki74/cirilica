@@ -25,7 +25,7 @@ public class rightArrow : MonoBehaviour {
 //        GameObject.Find ("TTFCreator").GetComponent<TTFText> ().Text=slova.trenutno_slovo.ToUpper();
        
 		GameObject.Find ("Manager").GetComponent<setup> ().novoVreme ();
-	
+		sound.aso1.Stop ();
 	
 
 	
